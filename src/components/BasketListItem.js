@@ -1,10 +1,20 @@
+import styled from 'styled-components';
+
+const BasketListItemDiv = styled.div`
+width: 100%;
+display: flex;
+justify-content: space-between;
+
+`
 
 
-const BasketListItem = (item) => {
+const BasketListItem = ({item}) => {
 
     return (
-
-        <p>type: {item.type}</p>
+        <BasketListItemDiv>
+            <p>{item.type}</p>
+            <p>{item.price}</p>
+        </BasketListItemDiv>
 
     );
 }
