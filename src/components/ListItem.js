@@ -1,11 +1,15 @@
 
 
-const ListItem = () => {
+const ListItem = ({item}) => {
+
+
 
     return (
-
-        <h4>This is a list item!</h4>
-
+        <>
+        <p>{item.color}</p>
+        <p>{item.type}</p>
+       <img src="{item.image_link}" alt="dress pic" />
+            </>
     );
 };
 
