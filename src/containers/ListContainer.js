@@ -7,9 +7,7 @@ const ListContainer = ({items}) => {
             return <ListItem key={index} item={item} />
     })
 
-    // if (!items) {
-    //     console.log("items not in list container");
-    // }
+ 
 
     return (
         <>

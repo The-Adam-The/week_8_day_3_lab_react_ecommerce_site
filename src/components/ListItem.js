@@ -5,11 +5,16 @@ const ListItem = ({item}) => {
 
 
     return (
-        <>
-        <p>{item.color}</p>
-        <p>{item.type}</p>
-       <img src="{item.image_link}" alt="dress pic" />
-            </>
+        <div class="clothing-item">
+            <img class="cloth-img" src={item.image_link} alt="dress pic"/>
+            <div class="info-box">
+
+                <p>Color: {item.color}</p>
+                <p>Type: {item.type}</p>
+
+            </div>
+            
+        </div>
     );
 };
 

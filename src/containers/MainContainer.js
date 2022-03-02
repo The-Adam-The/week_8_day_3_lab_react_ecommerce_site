@@ -3,6 +3,16 @@ import ListContainer from '../containers/ListContainer';
 
 const MainContainer = () => {
 
+    const [user, setUser] = useState([
+        {
+            "name": "Adam White",
+            "email": "adameatscookies234@gmail.com"
+        },{
+            "name": "Kelly Rawstron",
+            "email": "kellyeatscake@gmail.com"
+    }
+    ]);
+
     const [items, setItems] = useState([
           {
             "type": "dress",
@@ -22,6 +32,7 @@ const MainContainer = () => {
 return (
     <>
         <h2>Main Container</h2>
+        <p>{user.name} </p>
         <ListContainer items={items}/>
 
     </>
