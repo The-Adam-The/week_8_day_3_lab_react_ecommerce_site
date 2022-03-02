@@ -1,17 +1,20 @@
 import  {useState} from 'react';
 import ListContainer from '../containers/ListContainer';
+import BasketContainer from '../containers/BasketContainer';
+
 
 const MainContainer = () => {
 
-    const [user, setUser] = useState([
-        {
-            "name": "Adam White",
-            "email": "adameatscookies234@gmail.com"
-        },{
+    const [user, setUser] = useState(
+       {
             "name": "Kelly Rawstron",
-            "email": "kellyeatscake@gmail.com"
+            "email": "kellyeatscake@gmail.com",
+            "basket": [
+                {"type": "chicken"}, 
+                {"type": "horse"}
+            ]
     }
-    ]);
+    )
 
     const [items, setItems] = useState([
           {
@@ -33,6 +36,7 @@ return (
     <>
         <h2>Main Container</h2>
         <p>{user.name} </p>
+        <BasketContainer user={user}/>
         <ListContainer items={items}/>
 
     </>
