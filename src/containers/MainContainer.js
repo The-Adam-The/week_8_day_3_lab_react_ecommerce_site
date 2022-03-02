@@ -1,10 +1,14 @@
 import  {useState} from 'react';
 import ListContainer from '../containers/ListContainer';
 import BasketContainer from '../containers/BasketContainer';
+import HeaderContainer from '../containers/HeaderContainer'
 import styled from 'styled-components';
 
-const ContentDiv = styled.div`
-    
+const MainContainerDiv = styled.div`
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 `
 
 
@@ -47,16 +51,22 @@ const MainContainer = () => {
             "image_link": "https://imgs.search.brave.com/GpklI2qo6nh_h_YtXJQniZFnqgh3uiwmLthVgfLg5Mo/rs:fit:1200:1200:1/g:ce/aHR0cDovL3Jiay5o/LWNkbi5jby9hc3Nl/dHMvY20vMTQvNTAv/MTYwMHgyMzM2LzU0/OGI1ODFjYjMxMmNf/LV9yYmstYmx1ZS1w/YW50cy0wNzEzLTEt/czIuanBn",
             "price": 7799,
         }
-    ]);
 
+    ]);
+const addItem = (event) => {
+    const updatedBasket = [...user.basket, event.target.value];
+    //TODO: Finish adding button
+    
+    } 
 return (
     <>
-        <h2>Main Container</h2>
-        <p>{user.name} </p>
-        <div>
+        
+     
+        <MainContainerDiv>
+            <HeaderContainer user={user}/>
             <BasketContainer user={user}/>
-            <ListContainer items={items}/>
-        </div>
+            <ListContainer items={items} addItem={addItem}/>
+        </MainContainerDiv>
 
     </>
 )
